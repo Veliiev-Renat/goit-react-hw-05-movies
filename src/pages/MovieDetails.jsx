@@ -5,7 +5,7 @@ import { Details } from "../components/Details";
 
 const MovieDetails = () => {
 const [movie,setMovie]= useState(null)
-  const {movieId} = useParams()
+const {movieId} = useParams()
   useEffect(()=>{
     fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=f1334d29bcfab8e1b28860290726f3ad&language=en-US`)
     .then(r=>r.json())

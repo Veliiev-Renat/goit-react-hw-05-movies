@@ -2,20 +2,16 @@ import { Route,Routes,useNavigate } from "react-router-dom";
 import Layout from "./Layout";
 import Home from "pages/Home";
 import  MovieDetails  from "../pages/MovieDetails";
-import { useEffect } from "react"; 
 import Movies from "../pages/Movies";
-// import Cast from "./Сast";
-// import { Reviews } from "./Reviews";
 import { lazy } from "react";
 
 const Reviews = lazy(() => import("./Reviews"));
 const Cast = lazy(() => import("./Сast"));
 
 export const App = () => {
-  const navigate = useNavigate()
-  useEffect(()=>{
-    navigate('/home')
-  },[navigate])
+
+  useNavigate('home')
+
   return (
     <>
     <Routes>
@@ -27,6 +23,7 @@ export const App = () => {
               <Route path='reviews' element={<Reviews/>}/>
           </Route>
       </Route>
+      <Route path="*" element={<Layout />} />
     </Routes>
     </>
   );
