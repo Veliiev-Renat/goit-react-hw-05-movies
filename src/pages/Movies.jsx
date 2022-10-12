@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 
 export default function Movies(){
-const [searchParams,setSearchParams]  =  useSearchParams()
+const [setSearchParams]  =  useSearchParams()
 const [search,setSearch] = useState('')
 const [movies,setMovies]= useState(null)
 
