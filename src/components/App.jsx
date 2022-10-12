@@ -15,7 +15,7 @@ export const App = () => {
   const navigate = useNavigate()
   useEffect(()=>{
     navigate('/home')
-  },[])
+  },[navigate])
   return (
     <>
     <Routes>
