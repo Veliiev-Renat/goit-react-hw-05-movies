@@ -10,7 +10,7 @@ export default function AppBar(){
     <header>
         <nav>
             <ul style={{display: 'flex', flexWrap: 'wrap',gap: '20px'}}>
-            <NavLink style={checkActive} to='/home'>Home</NavLink>
+            <NavLink style={checkActive} to='/' end>Home</NavLink>
             <NavLink style={checkActive} to='/movies'>Movies</NavLink>
             </ul>
         </nav>
