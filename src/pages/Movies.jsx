@@ -8,8 +8,7 @@ const [searchParams,setSearchParams]  =  useSearchParams()
 const [search,setSearch] = useState('')
 const [movies,setMovies]= useState(null)
 const location = useLocation()
-const query = searchParams.get("query");
-console.log(query)
+
 const submit =(e)=>{
     e.preventDefault()
    const input = e.currentTarget.elements[0].value
@@ -22,15 +21,15 @@ const submit =(e)=>{
 
 
 useEffect(()=>{
-    if(query!==null){
-       fetch(`https://api.themoviedb.org/3/search/movie?api_key=f1334d29bcfab8e1b28860290726f3ad&language=en-US&page=1&include_adult=false&query=${query}`)
+    if(search!==''||searchParams!==null){
+       fetch(`https://api.themoviedb.org/3/search/movie?api_key=f1334d29bcfab8e1b28860290726f3ad&language=en-US&page=1&include_adult=false&query=${search}`)
        .then(r=>r.json())
        .then(searchMovies=>{
         const {results} = searchMovies
         setMovies(results)})
     }
 
-},[query])
+},[search,searchParams])
 
     return(
     <>
