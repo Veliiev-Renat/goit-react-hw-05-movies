@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import PropTypes from 'prop-types';
 export function Details({props}){
+
     const location = useLocation();
     const backLinkHref = location.state?.from ?? "/home";
     return(<main>
@@ -21,3 +23,16 @@ export function Details({props}){
         </main>
 );
       };
+
+Details.propTypes={
+    props:PropTypes.shape({
+        title: PropTypes.string,
+        poster_path: PropTypes.string,
+        vote_average:PropTypes.number,
+        release_date:PropTypes.string,
+        overview:PropTypes.string,
+        genres:PropTypes.arrayOf(PropTypes.shape({
+            name:PropTypes.string
+        }))
+      }),
+}
