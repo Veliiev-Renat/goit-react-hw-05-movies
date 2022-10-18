@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 export function Details({props}){
 
     const location = useLocation();
-    const backLinkHref = location.state?.from ?? "/home";
+    const backLinkHref = location.state?.location ?? "/home";
     return(<main>
         <section>
         <Link to={backLinkHref}>Go back</Link>

@@ -43,6 +43,7 @@ useEffect(()=>{
     <button type="submit">Search</button>
     </form>
     {movies&&<ul>
-        {movies.map(({original_title,id})=>(<li key={id}><Link to={`/movies/${id}`} state={{ from: location }} >{original_title}</Link></li>))}</ul>}
+        {movies.map(({original_title,id})=>(<li key={id}><Link to={`/movies/${id}`} state={{  location }} >{original_title}</Link></li>))}</ul>}
     </>)
 }
+// from:
